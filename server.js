@@ -4,7 +4,7 @@ const { readjson } = require("./readjson");
 app.get("/", (req, res) => {
   res.json({ mess: "Heloo" });
 });
-app.get("/api", (req, res) => {
+app.get("/api/:db", (req, res) => {
   readjson(req, res);
 });
 app.listen(8080, () => {

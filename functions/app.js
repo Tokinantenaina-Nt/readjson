@@ -7,7 +7,7 @@ app.get("/.netlify/functions/app", (req, res) => {
   res.json({ mess: "Heloo" });
 });
 
-app.get("/.netlify/functions/app/api", (req, res) => {
+app.get("/.netlify/functions/app/api/:db", (req, res) => {
   readjson(req, res);
 });
 
