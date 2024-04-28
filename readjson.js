@@ -1,15 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const db = require("./db.json");
-exports.handler = () => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify(db),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  };
-};
+// exports.handler = () => {
+//   return {
+//     statusCode: 200,
+//     body: JSON.stringify(db),
+//     headers: {
+//       "Content-Type": "application/json"
+//     }
+//   };
+// };
 module.exports.readjson = (req, res) => {
   const filepath = path.join(__dirname, "./db.json");
 
