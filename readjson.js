@@ -16,6 +16,6 @@ module.exports.readjson = (req, res) => {
   fs.readFile(filepath, "utf8", (err, data) => {
     const jsonData = JSON.parse(data);
     if (err) return res.send({ err });
-    res.json({ message: jsonData.message });
+    res.json({ message: jsonData });
   });
 };
