@@ -1,8 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-module.exports.readjson = (req, res) => {
-  //   const filepath = "./db/db.json";
-  const filepath = path.join(__dirname, "./db.json");
+module.exports.readjson = async (req, res) => {
+  const filepath = await path.join(__dirname, "./function/db.json");
   fs.access(filepath, fs.constants.F_OK, err => {
     if (err) {
       return res.status(404).json({ message: err });
