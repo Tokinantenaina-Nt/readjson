@@ -1,0 +1,17 @@
+{
+  "name": "readjson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readjson.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
+    "serverless-http": "^3.2.0"
+  }
+}
