@@ -1,19 +1,21 @@
 const fs = require("fs");
 const path = require("path");
 exports.handler = (req, res) => {
-  const db = require("./db.json");
-  const dbFile = path.join(__dirname, "./db.json");
+  const db = req.params.db;
+  const dbFile = path.join(__dirname, `./db/${db}.json`);
   return {
+    // statusCode: 200,
+    // body: JSON.stringify(dbFile),
+    // headers: {
+    //   "Content-Type": "application/json"
+    // }
     statusCode: 200,
-    body: JSON.stringify(dbFile),
-    headers: {
-      "Content-Type": "application/json"
-    }
+    body: dbFile
   };
 };
 module.exports.readjson = (req, res) => {
   const db = req.params.db;
-  const filepath = path.join(__dirname, `./${db}.json`);
+  const filepath = path.join(__dirname, `./db/${db}.json`);
 
   fs.readFile(filepath, "utf8", (err, data) => {
     const jsonData = JSON.parse(data);
