@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-exports.handler = (req, res) => {
+exports.handler = async (req, res) => {
   const db = req.params.db;
   const dbFile = path.join(__dirname, `./db/${db}.json`);
   return {
